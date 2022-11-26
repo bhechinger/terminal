@@ -1,5 +1,0 @@
-#!/bin/zsh
-podman run \
-  --rm \
-  -v "$HOME/.aws:/root/.aws:rw" \
-  amazon/aws-cli $@

@@ -1,6 +1,6 @@
-alias docker='podman'
+#alias docker='podman'
 
-alias cat='bat'
+alias cat='batcat'
 
 alias ls='lsd'
 alias l='ls -l'
@@ -39,3 +39,6 @@ function secrets-hermes {
   eval $(op signin my)
   eval $(op get item ehcdhcrzjbe35ejokjokclu56y --fields notes)
 }
+
+alias cov="go test ./... -coverprofile=coverage.out && go tool cover -html=coverage.out"
+

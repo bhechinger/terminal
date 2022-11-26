@@ -1,14 +1,17 @@
+TERMINAL_DIR=${HOME}/.terminal
 export XDG_CONFIG_HOME="$TERMINAL_DIR/config"
 
 # go path
 GOPATH=$HOME/go
 PATH="${GOPATH//://bin:}/bin:$PATH"
 
+source $TERMINAL_DIR/antigen.zsh
+
 #### set zsh config
 DISABLE_AUTO_UPDATE=true
 ZSH="$(antibody path robbyrussell/oh-my-zsh)"
 COMPLETION_WAITING_DOTS="true"
-plugins=(z git kubectl helm gcloud iterm2 fzf gcloud aws)
+plugins=(z git kubectl helm gcloud iterm2 fzf gcloud aws docker docker-compose)
 
 #### load plugins
 source <(antibody init)
@@ -37,6 +40,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
     source $TERMINAL_DIR/aliases-linux.sh
     PATH="$PATH:$TERMINAL_DIR/imgs"
+    PATH="${HOME}/bin:${PATH}"
 
     export GIT_ASKPASS=`which ksshaskpass`
 
@@ -48,3 +52,6 @@ source $TERMINAL_DIR/aliases.sh
 source $TERMINAL_DIR/aws.sh
 source $TERMINAL_DIR/gcp.sh
 source $TERMINAL_DIR/spaceship.sh
+
+# I'm a VI nerd, sorry
+bindkey -v

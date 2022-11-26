@@ -1,6 +1,7 @@
 [user]
-	name = Neel Radhakrishnan
-	email = neel@rdkr.uk
+	name = Brian Hechinger
+	email = wonko@4amlunch.net
+	signingkey = 725B6D77374053B8
 [core]
 	editor = code --wait
 	excludesfile = ~/code/terminal/config/git/gitignore
@@ -15,3 +16,7 @@
 
 [includeIf "gitdir:~/code/engie/"]
 	path = ~/code/rdkr/terminal/config/git/config-engie
+[commit]
+	gpgsign = true
+[credential]
+	username = bhechinger
